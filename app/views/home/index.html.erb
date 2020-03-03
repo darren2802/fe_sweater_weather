@@ -17,11 +17,11 @@
               <td><%= @weather_information[:current_weather_summary][:description] %></td>
             </tr>
             <tr>
-              <td colspan="2"><%= @weather_information[:current_weather_summary][:temp_current] %></td>
+              <td colspan="2"><%= @weather_information[:current_weather_summary][:temp_current] %>&deg;</td>
             </tr>
             <tr>
-              <td><b>High: </b><%= @weather_information[:current_weather_summary][:temp_hi] %></td>
-              <td><b>Low: </b><%= @weather_information[:current_weather_summary][:temp_low] %></td>
+              <td><b>High: </b><%= @weather_information[:current_weather_summary][:temp_hi] %>&deg;</td>
+              <td><b>Low: </b><%= @weather_information[:current_weather_summary][:temp_low] %>&deg;</td>
             </tr>
           </table>
         </td>
@@ -80,7 +80,7 @@
           <table>
             <tr>
               <td>Feels Like:</td>
-              <td><%= @weather_information[:current_weather_detail][:feels_like] %></td>
+              <td><%= @weather_information[:current_weather_detail][:feels_like] %>&deg;</td>
             </tr>
             <tr>
               <td>Humidity:</td>
@@ -92,7 +92,7 @@
             </tr>
             <tr>
               <td>UV Index:</td>
-              <td><%= @weather_information[:current_weather_detail][:uv_index] %> (<%= @weather_information[:current_weather_detail][:uv_index] %>)</td>
+              <td><%= @weather_information[:current_weather_detail][:uv_index] %> <%= @weather_information[:current_weather_detail][:uv_category] %></td>
             </tr>
           </table>
         </td>
@@ -101,7 +101,172 @@
   </div>
 
   <div class="grid-item item5">
-
+    <table>
+      <tr>
+        <table>
+          <tr>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_1][:icon] %><br>
+              <%= @weather_information[:forecast][:day_1][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_2][:icon] %><br>
+              <%= @weather_information[:forecast][:day_2][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_3][:icon] %><br>
+              <%= @weather_information[:forecast][:day_3][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_4][:icon] %><br>
+              <%= @weather_information[:forecast][:day_4][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_5][:icon] %><br>
+              <%= @weather_information[:forecast][:day_5][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_6][:icon] %><br>
+              <%= @weather_information[:forecast][:day_6][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:forecast][:day_7][:icon] %><br>
+              <%= @weather_information[:forecast][:day_7][:summary] %>
+            </td>
+          </tr>
+        </table>
+      </tr>
+      <tr>
+        <table>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_1][:icon] %><br>
+              <%= @weather_information[:forecast][:day_1][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_1][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_1][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_1][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_1][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_2][:icon] %><br>
+              <%= @weather_information[:forecast][:day_2][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_2][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_2][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_2][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_2][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_3][:icon] %><br>
+              <%= @weather_information[:forecast][:day_3][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_3][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_3][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_3][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_3][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_4][:icon] %><br>
+              <%= @weather_information[:forecast][:day_4][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_4][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_4][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_4][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_4][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_5][:icon] %><br>
+              <%= @weather_information[:forecast][:day_5][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_5][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_5][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_5][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_5][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_6][:icon] %><br>
+              <%= @weather_information[:forecast][:day_6][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_6][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_6][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_6][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_6][:temp_low] %>
+            </td>
+          </tr>
+          <tr>
+            <td>[weekday]</td>
+            <td>
+              <%= @weather_information[:forecast][:day_7][:icon] %><br>
+              <%= @weather_information[:forecast][:day_7][:summary] %>
+            </td>
+            <td>
+              <%= @weather_information[:forecast][:day_7][:precip_type] %><br>
+              <%= @weather_information[:forecast][:day_7][:precip_probability] %>
+            </td>
+            <td>
+              &#8599;<%= @weather_information[:forecast][:day_7][:temp_high] %>
+            </td>
+            <td>
+              &#8600;<%= @weather_information[:forecast][:day_7][:temp_low] %>
+            </td>
+          </tr>
+        </table>
+      </tr>
+    </table>
 
   </div>
 </div>
