@@ -8,8 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body style="
+      background-image: url( <%=  @background_img_url %> );
+      background-size: cover;
+      background-repeat: no-repeat;">
 
-  <body>
+    <ul>
+      <li><a href="#">Sweater Weather</a></li>
+      <li class='right'><a href="#news">Sign Up</a></li>
+      <li class='right'><a href="#contact">Login</a></li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

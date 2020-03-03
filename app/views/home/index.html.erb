@@ -1,0 +1,107 @@
+<script>
+  var skycons = new Skycons({"color": "pink"});
+
+  skycons.add(document.getElementById("icon_summary"), Skycons.RAIN);
+
+  skycons.play();
+</script>
+
+<div class="grid-container">
+  <div class="grid-item item">
+    <table class='summary'>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td><canvas id="icon_summary" width="128" height="128"></canvas></td>
+              <td><%= @weather_information[:current_weather_summary][:description] %></td>
+            </tr>
+            <tr>
+              <td colspan="2"><%= @weather_information[:current_weather_summary][:temp_current] %></td>
+            </tr>
+            <tr>
+              <td><b>High: </b><%= @weather_information[:current_weather_summary][:temp_hi] %></td>
+              <td><b>Low: </b><%= @weather_information[:current_weather_summary][:temp_low] %></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>
+                <%= @weather_information[:current_weather_summary][:city] %>, <%= @weather_information[:current_weather_summary][:state] %>
+              </td>
+            </tr>
+            <tr>
+              <td><%= @weather_information[:current_weather_summary][:country] %></td>
+            </tr>
+            <tr>
+              <td>
+                <%= @weather_information[:current_weather_summary][:time] %>, <%= @weather_information[:current_weather_summary][:date] %>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td><%= link_to 'Change Location', '/change_location' %></td>
+            </tr>
+            <tr>
+              <td><%= link_to 'favorite', '/favorite' %></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-item item4">
+    <table>
+      <th>Details</th><th></th><th></th>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td><%= @weather_information[:current_weather_detail][:icon] %></td>
+            </tr>
+            <tr>
+              <td><%= @weather_information[:current_weather_detail][:description] %></td>
+            </tr>
+            <tr>
+              <td>Today: <%= @weather_information[:current_weather_detail][:today] %></td>
+            </tr>
+            <tr>
+              <td>Tonight: <%= @weather_information[:current_weather_detail][:tonight] %></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>Feels Like:</td>
+              <td><%= @weather_information[:current_weather_detail][:feels_like] %></td>
+            </tr>
+            <tr>
+              <td>Humidity:</td>
+              <td><%= @weather_information[:current_weather_detail][:humidity] %></td>
+            </tr>
+            <tr>
+              <td>Visibility:</td>
+              <td><%= @weather_information[:current_weather_detail][:visibility] %></td>
+            </tr>
+            <tr>
+              <td>UV Index:</td>
+              <td><%= @weather_information[:current_weather_detail][:uv_index] %> (<%= @weather_information[:current_weather_detail][:uv_index] %>)</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-item item5">
+
+
+  </div>
+</div>
