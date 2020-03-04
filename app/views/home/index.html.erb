@@ -101,37 +101,37 @@
         <table>
           <tr>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_1][:icon] %><br>
               <%= @weather_information[:forecast][:day_1][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_2][:icon] %><br>
               <%= @weather_information[:forecast][:day_2][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_3][:icon] %><br>
               <%= @weather_information[:forecast][:day_3][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_4][:icon] %><br>
               <%= @weather_information[:forecast][:day_4][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_5][:icon] %><br>
               <%= @weather_information[:forecast][:day_5][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_6][:icon] %><br>
               <%= @weather_information[:forecast][:day_6][:temp_avg] %>&deg;
             </td>
             <td>
-              <%= @weather_information[:current_weather_summary][:time] %><br>
+              <%= @weather_information[:current_weather_summary][:time_short] %><br>
               <%= @weather_information[:forecast][:day_7][:icon] %><br>
               <%= @weather_information[:forecast][:day_7][:temp_avg] %>&deg;
             </td>
@@ -142,7 +142,7 @@
       <tr>
         <table>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_1][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_1][:icon] %><br>
               <%= @weather_information[:forecast][:day_1][:summary] %>
@@ -159,7 +159,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_2][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_2][:icon] %><br>
               <%= @weather_information[:forecast][:day_2][:summary] %>
@@ -176,7 +176,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_3][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_3][:icon] %><br>
               <%= @weather_information[:forecast][:day_3][:summary] %>
@@ -193,7 +193,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_4][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_4][:icon] %><br>
               <%= @weather_information[:forecast][:day_4][:summary] %>
@@ -210,7 +210,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_5][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_5][:icon] %><br>
               <%= @weather_information[:forecast][:day_5][:summary] %>
@@ -227,7 +227,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_6][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_6][:icon] %><br>
               <%= @weather_information[:forecast][:day_6][:summary] %>
@@ -244,7 +244,7 @@
             </td>
           </tr>
           <tr>
-            <td>[weekday]</td>
+            <td><%= @weather_information[:forecast][:day_7][:weekday] %></td>
             <td>
               <%= @weather_information[:forecast][:day_7][:icon] %><br>
               <%= @weather_information[:forecast][:day_7][:summary] %>
