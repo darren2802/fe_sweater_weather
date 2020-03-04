@@ -1,11 +1,3 @@
-<script>
-  var skycons = new Skycons({"color": "pink"});
-
-  skycons.add(document.getElementById("icon_summary"), Skycons.RAIN);
-
-  skycons.play();
-</script>
-
 <div class="grid-container">
   <div class="grid-item item">
     <table class='summary'>
@@ -45,10 +37,13 @@
         <td>
           <table>
             <tr>
-              <td><%= link_to 'Change Location', '/change_location' %></td>
+              <td><%= link_to 'Change Location', '/', id: 'change_loc' %></td>
             </tr>
             <tr>
-              <td><%= link_to 'favorite', '/favorite' %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><%= link_to 'Favorite', '/favorite' %></td>
             </tr>
           </table>
         </td>
@@ -108,41 +103,42 @@
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_1][:icon] %><br>
-              <%= @weather_information[:forecast][:day_1][:summary] %>
+              <%= @weather_information[:forecast][:day_1][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_2][:icon] %><br>
-              <%= @weather_information[:forecast][:day_2][:summary] %>
+              <%= @weather_information[:forecast][:day_2][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_3][:icon] %><br>
-              <%= @weather_information[:forecast][:day_3][:summary] %>
+              <%= @weather_information[:forecast][:day_3][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_4][:icon] %><br>
-              <%= @weather_information[:forecast][:day_4][:summary] %>
+              <%= @weather_information[:forecast][:day_4][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_5][:icon] %><br>
-              <%= @weather_information[:forecast][:day_5][:summary] %>
+              <%= @weather_information[:forecast][:day_5][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_6][:icon] %><br>
-              <%= @weather_information[:forecast][:day_6][:summary] %>
+              <%= @weather_information[:forecast][:day_6][:temp_avg] %>&deg;
             </td>
             <td>
               <%= @weather_information[:current_weather_summary][:time] %><br>
               <%= @weather_information[:forecast][:day_7][:icon] %><br>
-              <%= @weather_information[:forecast][:day_7][:summary] %>
+              <%= @weather_information[:forecast][:day_7][:temp_avg] %>&deg;
             </td>
           </tr>
         </table>
       </tr>
+      <br>
       <tr>
         <table>
           <tr>
@@ -156,10 +152,10 @@
               <%= @weather_information[:forecast][:day_1][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_1][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_1][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_1][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_1][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -173,10 +169,10 @@
               <%= @weather_information[:forecast][:day_2][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_2][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_2][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_2][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_2][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -190,10 +186,10 @@
               <%= @weather_information[:forecast][:day_3][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_3][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_3][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_3][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_3][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -207,10 +203,10 @@
               <%= @weather_information[:forecast][:day_4][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_4][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_4][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_4][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_4][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -224,10 +220,10 @@
               <%= @weather_information[:forecast][:day_5][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_5][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_5][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_5][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_5][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -241,10 +237,10 @@
               <%= @weather_information[:forecast][:day_6][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_6][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_6][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_6][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_6][:temp_low] %>&deg;
             </td>
           </tr>
           <tr>
@@ -258,10 +254,10 @@
               <%= @weather_information[:forecast][:day_7][:precip_probability] %>
             </td>
             <td>
-              &#8599;<%= @weather_information[:forecast][:day_7][:temp_high] %>
+              &#8599;<%= @weather_information[:forecast][:day_7][:temp_high] %>&deg;
             </td>
             <td>
-              &#8600;<%= @weather_information[:forecast][:day_7][:temp_low] %>
+              &#8600;<%= @weather_information[:forecast][:day_7][:temp_low] %>&deg;
             </td>
           </tr>
         </table>
@@ -270,3 +266,19 @@
 
   </div>
 </div>
+
+<script>
+  // var skycons = new Skycons({"color": "pink"});
+  // skycons.add(document.getElementById("icon_summary"), Skycons.RAIN);
+  // skycons.play();
+
+  $('#change_loc').click(function() {
+    var location = prompt('Please enter location');
+
+    if (location == null || location == '') {
+
+    } else {
+      $.get('/', {location: location})
+    }
+  })
+</script>
